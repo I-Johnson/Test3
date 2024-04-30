@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="326.0" prefWidth="717.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MainController">
+   <top>
+      <Label text="Miraculous Calculator" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <right>
+            <VBox prefHeight="200.0" prefWidth="64.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onAddButton" prefHeight="64.0" prefWidth="64.0" text="+">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#onSubButton" prefHeight="64.0" prefWidth="64.0" text="-" textAlignment="JUSTIFY">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onMultiplyButton" prefHeight="64.0" prefWidth="64.0" text="*">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onDivideButton" prefHeight="64.0" prefWidth="64.0" text="/">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </right>
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <top>
+                  <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Region prefHeight="200.0" prefWidth="100.0" />
+                        <TextField fx:id="NumOneTF" onMousePressed="#onNumOnePressed" prefHeight="51.0" prefWidth="124.0">
+                           <font>
+                              <Font size="24.0" />
+                           </font></TextField>
+                        <Region prefHeight="200.0" prefWidth="200.0" />
+                        <TextField fx:id="NumTwoTF" onMouseClicked="#onNumTwoPressed" prefHeight="51.0" prefWidth="124.0">
+                           <font>
+                              <Font size="24.0" />
+                           </font></TextField>
+                        <Region prefHeight="200.0" prefWidth="100.0" />
+                     </children>
+                     <BorderPane.margin>
+                        <Insets top="25.0" />
+                     </BorderPane.margin>
+                  </HBox>
+               </top>
+               <center>
+                  <Label fx:id="ResultLabel" text="0" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="76.0" />
+                     </font>
+                  </Label>
+               </center>
+            </BorderPane>
+         </center>
+      </BorderPane>
+   </center>
+   <right>
+      <VBox prefHeight="268.0" prefWidth="176.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="35.0" prefWidth="200.0" text="History" textAlignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ListView fx:id="HistoryView" prefHeight="200.0" prefWidth="139.0" />
+         </children>
+         <BorderPane.margin>
+            <Insets left="15.0" />
+         </BorderPane.margin>
+      </VBox>
+   </right>
+</BorderPane>
