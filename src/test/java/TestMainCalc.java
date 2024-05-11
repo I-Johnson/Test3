@@ -12,6 +12,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import model.CalcModel;
@@ -66,11 +68,6 @@ public class TestMainCalc
 		robot.clickOn("#divisionOperation");
 	}
 	
-//	private void checkAnswer(FxRobot robot, String ans) {
-//		Assertions.assertThat(robot.lookup("#displayAnswerLabel").queryAs(Label.class)).hasText(ans);
-////		System.out.print(ans);
-//	}
-//	
 	private void checkAnswer(FxRobot robot, String expectedAnswer) {
 	    Label displayLabel = robot.lookup("#displayAnswerLabel").queryAs(Label.class);
 	    String actualAnswer = displayLabel.getText();
@@ -152,5 +149,68 @@ public class TestMainCalc
 	    }
 	}
 	
-
+//	
+//	 @Test
+//	    public void test(FxRobot robot) {
+//	    	
+//	    	//login as user
+//	        enterInfo(robot, "robin@princeton.edu", "#email");
+//	        enterInfo(robot, "Williams", "#password");
+//	        robot.clickOn("#loginButton");
+//	        try {
+//	            Thread.sleep(2000);
+//	        } catch (InterruptedException e) {
+//	            e.printStackTrace();
+//	        }
+//	        
+//	        // Test Navbar by clicking and asserting if we go to the place we want. 
+//	        robot.clickOn("#Jobs");
+//	        checkResult(robot, "Job Openings", "#allJobsTitle");
+//	        robot.clickOn("#Employers");
+//	        checkResult(robot, "Employers", "#allEmployersTitle");
+//	        robot.clickOn("Users");
+//	        checkResult(robot, "Users", "#allUsersTitle");
+//	        robot.clickOn("Skills");
+//	        checkResult(robot, "Skills", "#allSkillsTitle");
+//	        robot.clickOn("Posts");
+//	        checkResult(robot, "Posts", "#allPostsTitle");
+//	        robot.clickOn("#Profile");
+//	        
+//
+//	        checkResult(robot, "Robin", "#title"); // Check if the title is set to "Robin"
+//	        checkResult(robot, "GreatestActor", "#description"); // Check if the description is "GreatestActor"
+//	        
+//	        robot.clickOn("#edit");
+//	        
+//	        try {
+//	            Thread.sleep(1000);
+//	        } catch (InterruptedException e) {
+//	            e.printStackTrace();
+//	        }
+//	        
+//	        // Check if proper info is loaded
+//	        String name = robot.lookup("#titleText").queryAs(TextField.class).getText();
+//	        String description = robot.lookup("#descriptionText").queryAs(TextArea.class).getText();
+//
+//	        Assertions.assertThat(name).isEqualTo("Robin");
+//	        Assertions.assertThat(description).isEqualTo("GreatestActor");
+//
+//	        // edit and save
+//	        enterInfo(robot, "Robin Williams", "#titleText");
+//	        enterInfoTextArea(robot, "The Greatest Actor", "#descriptionText");
+//	         
+//	        robot.clickOn("#save");
+//	        
+//	        checkResult(robot, "Robin Williams", "#title"); // Check if the title is set to "Robin Williams" after the change
+//	        checkResult(robot, "The Greatest Actor", "#description"); // Check if the description is "The Greatest Actor"
+//	        
+//	        //Check related pages buttons work
+//	        robot.clickOn("#Jobs");
+//	        checkResult(robot, "Job Openings", "#allJobsTitle");
+//	        ListView<String> jobListView = robot.lookup("#allJobsList").queryAs(ListView.class);
+//	        ObservableList<String> jobItems = jobListView.getItems();
+//    robot.clickOn("#Posts");
+//    robot.clickOn("Post: SWE Job Article");
+//    robot.clickOn("#skill");
+//    ObservableList <Page> relatedSkill_P =  getListView(robot, "#allPagesList").getItems();
 }
